@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Más información</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 25px 15px;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  text-align: center;
+}
+
+.box {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 15px 0 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  background: #1877f2;
+  color: white;
+  padding: 16px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <img src="post%20(1).jpg" alt="Publicación de Facebook">
+
+  <img src="post.jpg" alt="Publicación de Facebook">
+
+  <h1>¿QUIERES SABER MÁS?</h1>
+
+  <p>ESCRÍBENOS AHORA EN FACEBOOK</p>
+
+  <a class="button"
+     href="https://www.facebook.com/share/p/19WFxyNRGL/"
+     target="_blank">
+     💬 MENSAJARNOS EN FACEBOOK
+  </a>
+
+</div>
+
+</body>
+</html>
+
+
+
