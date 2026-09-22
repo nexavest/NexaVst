@@ -3,52 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi publicación de Facebook</title>
+  <title>Más información</title>
+
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px 20px;
       background: #f5f5f5;
+      text-align: center;
+      padding: 30px 15px;
     }
 
-    .box {
+    .container {
       max-width: 500px;
       margin: auto;
       background: white;
-      padding: 40px 25px;
-      border-radius: 16px;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+    }
+
+    .post-image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
     }
 
     h1 {
-      margin-bottom: 15px;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
 
     p {
+      font-size: 18px;
       color: #555;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
-    a {
+    .facebook-button {
       display: inline-block;
-      padding: 15px 25px;
       background: #1877f2;
       color: white;
+      padding: 16px 28px;
+      border-radius: 10px;
       text-decoration: none;
-      border-radius: 8px;
+      font-size: 18px;
       font-weight: bold;
     }
   </style>
 </head>
 
 <body>
-  <div class="box">
-    <h1>Mi publicación de Facebook</h1>
-    <p>Haz clic en el botón para ver la publicación.</p>
 
-    <a href="https://www.facebook.com/share/p/19WFxyNRGL/" target="_blank">
-      Ver publicación en Facebook
+  <div class="container">
+
+    <img src="post.jpg" alt="Publicación de Facebook" class="post-image">
+
+    <h1>¿QUIERES SABER MÁS?</h1>
+
+    <p>ESCRÍBENOS AHORA EN FACEBOOK</p>
+
+    <a
+      href="https://www.facebook.com/share/p/19WFxyNRGL/"
+      target="_blank"
+      class="facebook-button">
+      💬 MENSAJARNOS EN FACEBOOK
     </a>
+
   </div>
+
 </body>
 </html>
+
+
