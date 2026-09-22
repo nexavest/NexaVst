@@ -1,198 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuenta Regresiva - Melany Bajana</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Cuenta Regresiva - Melany Bajana</title>
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      background: url("fon.jpg") center center / cover no-repeat;
-      color: white;
-      text-align: center;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-    }
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: url("fon.jpg") center/cover no-repeat;
+}
 
-    .container {
-      position: relative;
-      z-index: 1;
-      width: 90%;
-      max-width: 600px;
-      padding: 35px 20px;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
 
-    .titulo {
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 35px;
-      text-transform: uppercase;
-    }
+.contenido {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 650px;
+}
 
-    .propietario {
-      font-size: 21px;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
+.titulo {
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
 
-    .nombre {
-      font-size: 34px;
-      font-weight: 800;
-      margin-bottom: 35px;
-    }
+.owner {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
 
-    .contador {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.nombre {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
 
-    .tiempo {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 15px;
-      padding: 18px 15px;
-      min-width: 105px;
-    }
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
 
-    .numero {
-      display: block;
-      font-size: 42px;
-      font-weight: 800;
-    }
+.caja {
+  min-width: 105px;
+  padding: 20px 12px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+}
 
-    .etiqueta {
-      display: block;
-      font-size: 14px;
-      margin-top: 5px;
-      text-transform: uppercase;
-    }
+.numero {
+  display: block;
+  font-size: 42px;
+  font-weight: bold;
+}
 
-    .finalizado {
-      font-size: 28px;
-      font-weight: bold;
-      display: none;
-      margin-top: 25px;
-    }
+.etiqueta {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
 
-    @media (max-width: 500px) {
-      .titulo {
-        font-size: 30px;
-      }
+.terminado {
+  display: none;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 25px;
+}
 
-      .nombre {
-        font-size: 27px;
-      }
+@media (max-width: 500px) {
 
-      .tiempo {
-        min-width: 85px;
-        padding: 14px 10px;
-      }
+  .titulo {
+    font-size: 31px;
+  }
 
-      .numero {
-        font-size: 32px;
-      }
-    }
-  </style>
+  .nombre {
+    font-size: 28px;
+  }
+
+  .caja {
+    min-width: 85px;
+    padding: 15px 8px;
+  }
+
+  .numero {
+    font-size: 32px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="overlay"></div>
+<div class="contenido">
 
-  <div class="container">
+  <div class="titulo">
+    Cuenta Regresiva
+  </div>
 
-    <div class="titulo">Cuenta Regresiva</div>
+  <div class="owner">
+    BONUS OWNER
+  </div>
 
-    <div class="propietario">BONUS OWNER</div>
-    <div class="nombre">Melany Bajana</div>
+  <div class="nombre">
+    Melany Bajana
+  </div>
 
-    <div class="contador" id="contador">
+  <div class="contador" id="contador">
 
-      <div class="tiempo">
-        <span class="numero" id="horas">03</span>
-        <span class="etiqueta">Horas</span>
-      </div>
-
-      <div class="tiempo">
-        <span class="numero" id="minutos">00</span>
-        <span class="etiqueta">Minutos</span>
-      </div>
-
-      <div class="tiempo">
-        <span class="numero" id="segundos">00</span>
-        <span class="etiqueta">Segundos</span>
-      </div>
-
+    <div class="caja">
+      <span class="numero" id="horas">03</span>
+      <span class="etiqueta">Horas</span>
     </div>
 
-    <div class="finalizado" id="finalizado">
-      ¡La cuenta regresiva ha terminado!
+    <div class="caja">
+      <span class="numero" id="minutos">00</span>
+      <span class="etiqueta">Minutos</span>
+    </div>
+
+    <div class="caja">
+      <span class="numero" id="segundos">00</span>
+      <span class="etiqueta">Segundos</span>
     </div>
 
   </div>
 
-  <script>
-    // 3 horas en milisegundos
-    let tiempoRestante = 3 * 60 * 60 * 1000;
+  <div class="terminado" id="terminado">
+    ¡La cuenta regresiva ha terminado!
+  </div>
 
-    const horas = document.getElementById("horas");
-    const minutos = document.getElementById("minutos");
-    const segundos = document.getElementById("segundos");
-    const contador = document.getElementById("contador");
-    const finalizado = document.getElementById("finalizado");
+</div>
 
-    function actualizarContador() {
+<script>
 
-      if (tiempoRestante <= 0) {
-        tiempoRestante = 0;
+let tiempo = 3 * 60 * 60;
 
-        horas.textContent = "00";
-        minutos.textContent = "00";
-        segundos.textContent = "00";
+function actualizar() {
 
-        contador.style.display = "none";
-        finalizado.style.display = "block";
+  let horas = Math.floor(tiempo / 3600);
+  let minutos = Math.floor((tiempo % 3600) / 60);
+  let segundos = tiempo % 60;
 
-        clearInterval(intervalo);
-        return;
-      }
+  document.getElementById("horas").textContent =
+    String(horas).padStart(2, "0");
 
-      const totalSegundos = Math.floor(tiempoRestante / 1000);
+  document.getElementById("minutos").textContent =
+    String(minutos).padStart(2, "0");
 
-      const h = Math.floor(totalSegundos / 3600);
-      const m = Math.floor((totalSegundos % 3600) / 60);
-      const s = totalSegundos % 60;
+  document.getElementById("segundos").textContent =
+    String(segundos).padStart(2, "0");
 
-      horas.textContent = String(h).padStart(2, "0");
-      minutos.textContent = String(m).padStart(2, "0");
-      segundos.textContent = String(s).padStart(2, "0");
+  if (tiempo <= 0) {
 
-      tiempoRestante -= 1000;
-    }
+    clearInterval(cuentaRegresiva);
 
-    actualizarContador();
+    document.getElementById("contador").style.display = "none";
+    document.getElementById("terminado").style.display = "block";
 
-    const intervalo = setInterval(actualizarContador, 1000);
-  </script>
+    return;
+  }
+
+  tiempo--;
+}
+
+actualizar();
+
+const cuentaRegresiva = setInterval(actualizar, 1000);
+
+</script>
 
 </body>
 </html>
